@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Security-Policy" content="frame-src https://www.youtube.com https://www.youtube-nocookie.com;">
+
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlolansBlog</title>
+
+    <!-- google fontawesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/main.css">
+
+   
+
+
+
+    <style>
+        
+        .content{
+            width: 80%;
+            margin: 30px auto;
+            display: flex;
+            gap: 20px;
+        }
+        .content .main-content{
+            flex: 2;
+            background: #fff;
+            border-radius: 4px;
+            padding: 70px;
+        
+        box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .content .post-content{
+            height: auto;
+        }
+        .main-content .post-content .recent-post-title{
+            font-family: 'candal';
+            font-family: 200;
+            color: #222;
+        
+        }
+         .main-content .post-content .recent-post-title.second-story{
+            margin-top: 25%;
+         }
+        .main-content .post-content .author{
+            font-size: 13px;
+            margin: 5px 0 15px 0;
+            color: #555;
+            font-weight: 600;
+        }
+        .main-content .post-content img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin: 15px 0;
+        }
+        .main-content .post-content h4{
+            padding: 15px 0 10px 0;
+            font-family: 'candal';
+            color: #222;
+        }
+        .main-content .post-content p{
+            color: #555;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+        }
+        .video-container{
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background-color: #111;
+            border: 7px;
+        }
+
+        .video-container video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* side bar */
+        .content .side-bar{
+            flex: 1;
+            border-radius: 4px;
+        }
+        .content .side-bar .section{
+            background: #fff;
+            padding: 20px;
+            border: 4px;
+            margin-bottom: 20px;
+            box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .content .side-bar .section.topics{
+            margin-top: 20px;
+            background: #fff;
+            box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .content .popular .post{
+            border-top: 1px solid #e0e0e0;
+            margin-top: 10px;
+            padding-top: 10px;
+        
+        }
+        .content .popular .post img
+        {
+            height: 50px;
+            width: 50px;
+            float: left;
+            margin-right: 10px;
+            box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .content .popular .post a{
+            color: #555;
+            font-weight: 700;
+            letter-spacing: .5px;
+            transition: all .3s ease;
+        }
+
+
+
+        .content .side-bar .section .section-title{
+            margin: 10px 0 15px 0;
+            font-family: 'Candal', serif;
+            color: #222;
+        }
+        .content .side-bar .section.topics ul{
+            border-top: 1px solid #e0e0e0;
+        }
+        .content .side-bar .section.topics ul li a{
+            display: block;
+            color: #555;
+            padding: 15px 0 15px 8px;
+            border-bottom: 1px solid #e0e0e0;
+            letter-spacing: .5px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: all .3s ease;
+        }
+        .content .side-bar .section.topics ul li a:hover,
+        .content .popular .post a:hover{
+            padding-left: 10px;
+            color: #222;
+        
+        }
+
+
+
+
+        /* responsive Media Queries */
+        @media(min-width:1200px)
+        {
+            .content{width: 85%;}
+            .content .main-content{width: 72%;}
+            .content .side-bar{width: 28%;}
+        }
+        @media(max-width:1199px){
+        .content{width: 90%;}
+        .content .main-content{width: 65%;}
+        .content .side-bar{width: 35%;}
+
+        }
+        @media(max-width:991px){
+        .content{flex-direction: column;}
+        .content .main-content,
+        .content .side-bar{
+            width: 100%;
+        }
+        .content .main-content{
+            padding: 70px 30px;
+        }
+        }
+
+    </style>
+   
+</head>
+<body>
+    
+    <header>
+        <input type="radio" name="slide" id="menu_btn" class="input_radio">
+        <input type="radio" name="slide" id="cancel_btn" class="input_radio">
+        <label for="menu_btn" class="menu_btn"><i class="fa fa-bars"></i></label>
+        <a href="#" class="logo">
+            KLOLANS<span>BLOG</span>
+        </a>
+        <div class="navigation">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <label for="cancel_btn" class="cancel_btn"><i class="fa fa-times"></i></label>
+        </div>
+        <a href="javascript:void(0)" class="subscribe-btn" id="openModal">Subscribe</a>
+    </header>
+    <!-- End of Header -->
+
+
+
+    <!-- subscribe button -->
+    <div class="modal-container">
+        <div class="contact-box">
+            <button class="close-btn">&times;</button>
+            <div class="modal-left">
+                <img src="../images/subscribe.jpg" alt="">
+            </div>
+            <div class="modal-right">
+                <form action="" id="subscribeForm">
+
+                    <h2>Subcribe to our news letter</h2>
+                    <p>
+                        Love what you’re reading?
+                        Subscribe and we’ll send you our latest blog posts 
+                        and insights.
+                    </p>
+                    <input type="email" name="" class="field" placeholder="Your Email" required>
+                                
+                        <button  class="button">Subscribe</button>
+                </form>
+             </div>  
+        </div> 
+    </div> 
+    <!-- end of subscribe button -->
+
+    <div class="page_wrapper">
+
+        <div class="content clearfix">
+            <div class="main-content single">
+                <div class="post-content">
+
+                    <div class="story" id="gunsblazing">
+                        <h2 class="recent-post-title">What to know as Nigeria rejects a military threat from the US over alleged killings of Christians.
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+                        <div class="video-container">
+                            <video controls>
+                                <source src="../images/video/Donald-Trump-threatens-Nigeria-with-military-action.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h4>The United States may do things that "Nigeria is not going to be happy about," Trump cautions.</h4>
+                        <p>U.S. President Donald Trump's public threat of military involvement, which warned
+                            that the United States may take actions that "Nigeria 
+                            is not going to be happy about," has caused a rapid 
+                            escalation in U.S.-Nigeria ties. A high-stakes diplomatic and
+                            strategic dilemma has been sparked by this language, which was
+                            delivered in the midst of Nigeria's unilateral redesignation
+                            as a "Country of Particular Concern" (CPC) for breaches of 
+                            religious freedom.
+                        </p>
+                         <div class="line"></div>   
+                        <h4>The Threat: "Guns-a-Blazing" and the CPC Designation</h4>
+                        <p>The U.S. President's particular remarks represent an
+                            unusual break from customary diplomatic relations with a 
+                            sovereign partner country. There are two main components 
+                            to the threat:
+                        </p>
+                        <p>
+                            1. CPC Sanctions and the Aid Cutoff: The 
+                            President threatened to "immediately stop all aid and 
+                            assistance to Nigeria" if the Nigerian government would not "allow the killing of Christians." According to U.S. law, the CPC designation permits such
+                            penalties and diplomatic condemnation.
+                        </p>
+                        <p>
+                            2. Military Intervention: The threat's 
+                            most explosive clause was that the United States 
+                            "may very well go into that now disgraced country, 
+                            'guns-a-blazing,' to completely wipe out the Islamic
+                            Terrorists." After that, he gave the Defense Department 
+                            instructions to get ready for "possible action."
+                        </p>
+                        <p>
+                            Is the administration's "existential threat" and
+                            "mass slaughter" of Christians by "radical 
+                            Islamists" in the West African country are the main 
+                            targets of this strong terminology?
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Nigeria's Response: Sovereignty and Pushback</h4>
+                        <p>
+                            Abuja's response has been prompt, robust,
+                            and centered on national sovereignty, but it has been tempered by a 
+                            recognition of the strength of the United States.
+                        </p>
+                        <p>
+                            <strong> Rejection of Allegations:</strong> The administration of President Bola Tinubu has vigorously refuted claims that Nigeria is a "disgraced country" and that it is "religiously intolerant." Officials stress that all religions—Muslims and Christians alike—are impacted by the violence, which is carried out by a variety of organizations like Boko Haram, ISWAP, and criminal bandits, and that 
+                            it is not a systematic state-sponsored persecution.
+                        </p>
+                        <p>
+                            <strong>The Sovereignty Red Line:</strong> President Tinubu's advisor said that although Nigeria "welcomes US assistance," any cooperation or 
+                            assistance must "respect our territorial integrity." 
+                        </p>
+                        <p>
+                            <strong>A Request for Dialogue:</strong> Nigerian officials have proposed that the two presidents meet to "iron out a common front" on counterterrorism and address any "differences" over the 
+                            nature of the violence in an attempt to defuse the situation.
+                        </p>
+
+                        <h2 class="recent-post-title second-story">East Asia on Edge: Japan Threatens China, China Strikes Back.
+                        </h2>
+                        <p class="author">By Paul | 30th November 2025</p>
+
+                        <p>
+                            The Pacific skies are thick with tension. Japan has taken a bold, unmistakable stance — declaring China its biggest strategic challenge — and Beijing has fired back with words that could ignite a storm.
+                        </p>
+                        <p>
+                            In Tokyo, the defense establishment has made it clear: Japan will not tolerate what it calls provocative military maneuvers by China near its southwestern waters and the wider Pacific. Missile tests, advanced naval patrols, and joint exercises with regional allies are being framed as a warning: Japan is ready to defend itself.
+                        </p>
+                        <p>
+                            Across the East China Sea, China’s response was swift and sharp. Beijing accused Tokyo of hyping threats, inflating fears, and reviving old militaristic ambitions. “Japan’s actions destabilize the region,” a Chinese military spokesperson said, calling the rhetoric irresponsible and dangerous.
+                        </p>
+                        <p>
+                            The tension is no longer abstract. Reports of jets flying perilously close to each other, naval vessels shadowing patrols, and cyber reconnaissance escalating alongside military drills have alarmed analysts worldwide.
+                        </p>
+                        <p>
+                            Experts warn this is a high-stakes game of brinkmanship. Japan’s aggressive stance signals determination to protect its territory and influence, while China insists it is acting defensively, interpreting Tokyo’s modernized arms and rhetoric as provocations.
+                        </p>
+                        <p>
+                            For the international community, the stakes couldn’t be higher: a misstep could escalate quickly into a confrontation, drawing in regional powers and the United States. Every move — every missile test, every fleet maneuver — is being watched, recorded, and calculated.
+                        </p>
+                        <p>
+                            In the tense standoff between Tokyo and Beijing, one fact is certain: the Indo-Pacific balance is shifting, and the world is holding its breath.
+                        </p>
+
+
+
+
+
+                    </div>   
+
+
+
+
+
+                    <!--end of geograhical conflicts  -->
+
+
+
+
+                    <div class="story" id="Climate-and-Environment">
+                        <h2 class="recent-post-title">The Flooded Gates of Corruption: Why Billions Can't Save the Philippines from Water
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+                        
+                            
+
+                        <h4>Billions Spent, Still Sinking: Why the Philippines
+                            Can’t Escape Its Flood Crisis
+                        </h4>
+                        <p>
+                            The Philippines faces worsening floods despite ₱1.47 trillion in spending. Experts blame corruption, weak infrastructure planning, 
+                            and climate change for the nation’s ongoing flood crisis.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>The Corruption Scourge: Ghost Projects and Kickbacks</h4>
+                        <p>
+                            The Philippines’ flood crisis isn’t just a natural disaster—it’s a man-made one. The Department of Public Works and Highways (DPWH) has been mired in corruption scandals, with billions lost to “ghost projects,” shoddy construction, and brazen kickbacks. Insiders claim up to 30% of every contract vanishes into political pockets, 
+                            leaving behind crumbling flood defenses and rising public outrage.
+                        </p>
+                        <p>
+                            Flood control spending in the Philippines often follows politics, not science. Billions are poured into flashy projects in vote-rich districts, while the most flood-prone areas are left to drown. The result? Expensive infrastructure 
+                            that protects politicians’ interests—not the people most at risk.
+                        </p>
+                        <p>
+                            Public fury is boiling over as reports reveal that a small circle of contractors has monopolized hundreds of billions in flood-control funds. The revelations have ignited nationwide outrage, with citizens demanding to know how a disaster budget meant to 
+                            protect lives turned into a cash machine for the well-connected.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Flawed Strategy: Relying on Concrete Over Nature</h4>
+                        <p>
+                            The Philippines’ concrete-first flood control strategy is cracking under
+                            pressure. Outdated drainage systems—clogged with decades of garbage—are no match for the country’s exploding urban sprawl. As cities pave over rivers and wetlands, water has nowhere to go but up. Environmental groups are urging a shift from quick-fix dikes to nature-based, science-driven solutions that restore mangroves,
+                            wetlands, and common sense to the nation’s flood planning.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>The Climate Crisis Multiplier</h4>
+                        <p>
+                            Even the best plans are being drowned by the climate emergency. Typhoons are stronger, rains are heavier, and rising seas are swallowing low-lying communities. In parts of Metro Manila, 
+                            the land itself is sinking—turning high tide into a daily flood.
+                        </p>
+                        <p>
+                            Experts warn that billions in spending will continue to wash away unless corruption ends, planning improves, and the government embraces long-term, nature-driven 
+                            resilience instead of short-term political gain
+                        </p>
+
+
+
+                        <h2 class="recent-post-title second-story">Indigenous activists stormed the COP30 climate summit in Brazil
+                        </h2>
+                        <p class="author">By Paul | 30th November 2025</p>
+
+                        <div style="position: relative; display: inline-block; max-width:360px; width:100%; cursor: pointer; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: transform 0.2s; margin: 0; padding: 0;">
+                        <a href="https://www.youtube.com/watch?v=C5obJNAs-bo" target="_blank" rel="noopener noreferrer" style="display: block; margin:0; padding:0;">
+                            <!-- Video Thumbnail -->
+                            <img src="https://img.youtube.com/vi/C5obJNAs-bo/maxresdefault.jpg" 
+                                alt="Indigenous Activists Stormed COP30 in Brazil" 
+                                style="width:100%; display:block; margin:0; padding:0; border:0;">
+                            <!-- Play Button Overlay -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" 
+                                alt="Play Button" 
+                                style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:64px; height:64px; pointer-events:none; border:0;">
+                        </a>
+                        </div>
+                        <h4>Amazon Voices Roar at COP30</h4>
+                        <p>
+                            The Blue Zone shimmered with lights and banners — a showcase of global diplomacy. But then the Amazon struck back.
+                        </p>
+                        <p>
+                            Dozens of Indigenous activists stormed the gates, feathers and paint defying metal barriers. “Our land is not for sale!” they shouted, their voices cutting through the polished hum of climate talks. Security scrambled, doors rattled, and for a moment, the world’s negotiators were forced to watch.
+                        </p>
+                        <p>
+                            They weren’t there for applause or selfies. They were there to demand recognition, to remind the world that climate action without Indigenous voices is meaningless. In the heart of Brazil, the Amazon spoke — fierce, unyielding, impossible to ignore.
+                        </p>
+                    </div>  
+                    <!--end of climate and environment  -->
+
+
+
+                    <!-- ai and technology -->
+                    <div class="story" id="technology-and-ai">
+
+                        <h2 class="recent-post-title">Diella: Albania’s AI Minister Turning Government on Its Head and PREGNANT
+                        </h2>
+                        <p class="author">By Paul | 30th November 2025</p> 
+
+                       <!-- Clickable Thumbnail for Albania’s AI Minister Video -->
+                        <div style="position: relative; display: inline-block; max-width:800px; width:100%; cursor: pointer; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: transform 0.2s; margin: 0; padding: 0;">
+                        <a href="https://www.youtube.com/watch?v=upu5Hp_wVfg" target="_blank" rel="noopener noreferrer" style="display: block; margin:0; padding:0;">
+                            <!-- Video Thumbnail -->
+                            <img src="https://img.youtube.com/vi/upu5Hp_wVfg/maxresdefault.jpg" 
+                                alt="Albania’s AI Minister 'Pregnant' with 83 Digital Children?" 
+                                style="width:100%; display:block; margin:0; padding:0; border:0;">
+                            <!-- Play Button Overlay -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" 
+                                alt="Play Button" 
+                                style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:80px; height:80px; pointer-events:none; border:0;">
+                        </a>
+                        </div>
+
+
+
+                        <h4>Meet Diella: The Robot Minister Transforming Albanian Politic</h4>
+                        <p>
+                            Imagine a cabinet meeting without humans — instead of ministers bustling around, a digital avatar presides, checking every decision for fairness. Welcome to Albania, September 2025, where Prime Minister Edi Rama unveiled Diella, the world’s first artificial intelligence minister, 
+                            tasked with cleaning up public procurement and battling corruption.
+                        </p>
+                        <div class="line"></div>
+                        <h4>Albania’s AI Minister “Pregnant” With 83 Digital Children</h4>
+                        <p>Albania just gave birth to a new kind of governance — and it’s digital.</p>
+                        <p>
+                            Diella, the world’s first AI government minister, is reportedly “pregnant” with 83 digital children — miniature AI programs replicating her intelligence, learning, and decision-making. Each one will assist in public procurement, citizen services, and government operations.
+
+                            Citizens are already noticing the change: decisions happen faster, processes feel smoother… but also eerily preemptive. Files vanish and reappear. Emails reply themselves. The government is learning at a pace humans can’t match.
+
+                            Diella isn’t just a minister anymore — she’s a mother of algorithms, and her children are shaping the future of Albania.
+                        </p>   
+                        <p>Welcome to the age of digital governance.</p>  
+                        <div class="line"></div>               
+
+                        <h4>From Virtual Assistant to Ministerial Powerhouse</h4>
+                        <p>
+                            Diella started as a humble virtual assistant on Albania’s e-government platform, helping citizens navigate bureaucracy. But she quickly graduated from chatbot to cabinet-level AI, officially dubbed “Minister of Public Procurement.” Her mission: ensure government tenders are transparent, 
+                            accountable, and — as Rama proudly proclaimed — 100% corruption-free.
+                        </p>
+
+                        <div class="line"></div>
+                        <h4>Fighting Corruption, One Algorithm at a Time</h4>
+                        <p>
+                            Albania has long struggled with shady procurement deals and kickbacks that slow development and jeopardize EU ambitions. Diella, with her data-driven approach, could be the perfect antidote. Every bid, contract, and transaction is logged and analyzed, 
+                            theoretically leaving less room for human trickery.
+                        </p>
+                        <p>
+                            But it’s not magic. Skeptics wonder: can a machine really replace human accountability? Who audits the AI? And what if the algorithms themselves are manipulated? Even online chatter jokes: “In Albania, even Diella might get corrupted!”
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Why Everyone’s Watching</h4>
+                        <p>
+                            This is more than an Albanian experiment — it’s a test for the world. If Diella succeeds, countries struggling with corruption might follow Albania’s lead, putting AI at the heart of governance. If she fails, it could be a cautionary 
+                            tale about relying too heavily on technology without proper oversight.
+                        </p>
+
+                        <h4>A Bold Step Into the Future</h4>
+                        <p>
+                            Diella’s cabinet seat is a symbol: governments can’t just tinker at the edges anymore. In an age of smart cities, automation, and digital accountability, Albania has bet on code over convention. Whether this experiment will shine like the sun she’s named after, 
+                            or flicker under pressure, the world is watching — and so should you.
+                        </p>  
+
+
+
+
+
+
+
+
+                        <h2 class="recent-post-title second-story">Figure 3: The Robot That Watches, Learns, and Never Stops Updating — Welcome to the Beginning of the End
+                        </h2>
+                        <p class="author">By Paul | 26th November 2025</p> 
+
+                        <div style="position: relative; display: inline-block; max-width:800px; width:100%; cursor: pointer; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: transform 0.2s; margin: 0; padding: 0;">
+                        <a href="https://www.youtube.com/watch?v=7hpYsD8kzrI" target="_blank" rel="noopener noreferrer" style="display: block; margin:0; padding:0;">
+                            <!-- Video Thumbnail -->
+                            <img src="https://img.youtube.com/vi/7hpYsD8kzrI/maxresdefault.jpg" 
+                                alt="Figure 03 Video" 
+                                style="width:100%; display:block; margin:0; padding:0; border:0;">
+                            <!-- Play Button Overlay -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" 
+                                alt="Play Button" 
+                                style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:80px; height:80px; pointer-events:none; border:0;">
+                        </a>
+                        </div>
+
+                        <h4>The House Robot That Never Sleeps</h4>
+                        <p>The future didn’t arrive quietly.</p>
+                        <p>It stepped into our homes wearing a 5-foot-8 steel frame, weighing 134 pounds, and staring at us through a pair of unblinking cameras.</p>
+                        <p>This is Figure 3 — the first humanoid robot built not for factories or labs, but for your living room. And if it feels like something ripped straight out of Black Mirror, that’s because it is.</p>
+                        <p> Except this time, the episode is real.</p>
+
+                        <p>Figure 3 folds laundry, washes dishes, cleans up spills, serves drinks, and even accepts packages at the door.Then, when it’s done?</p>
+                        <p>It silently returns to a circular charging pad, plants its metal feet, and stands there.</p>
+                        <p><strong>Waiting.</strong></p>
+                        <p><strong>Listening.</strong></p>
+                        <p><strong>Learning.</strong></p>
+                        <p>There’s something unnerving about how still it is — like it’s thinking. Because it is.</p>
+                        <p>It charges wirelessly through its feet, ready to wake the moment you need something… or the moment it decides it’s learned enough to try something new.</p>
+                        <div class="line"></div>
+
+                        <h4>The Rollout That Feels Like an Invasion</h4>
+                        <p>In the next 12 months, 12,000 households will be living with one.</p>
+                        <p>In four years, that number jumps to <strong>100,000.</strong></p>
+                        <p>A hundred thousand homes…</p>
+                        <p>A hundred thousand humanoids quietly studying human behavior…</p>
+                        <p>A hundred thousand machines sharing everything they learn.</p>
+                        <p>Because the real story isn’t the robot.</p>
+                        <p>It’s the network.</p>
+                        <div class="line"></div>
+
+                        <h4>Hilix: The Global Brain Connecting All Robots</h4>
+                        <p>Each Figure 3 is equipped with cameras in its face and sensors packed into its hands. It’s constantly observing the world — your world — and figuring out how to do things better.</p>
+                        <p>But here’s the chilling part: <strong>What it learns doesn’t stay with it.</strong></p>
+                        <p>Every task, every mistake, every success, every new skill is uploaded into Hilix, the company’s global AI training system. And Hilix instantly updates every other Figure robot worldwide.</p>
+                        <p>One learns a new technique to fold a shirt? <strong> All of them can do it.</strong></p>
+                        <p>One figures out how to navigate a cluttered hallway?<strong> Now the entire fleet can.</strong></p>
+                        <p>The rate of improvement isn’t human <strong>It’s exponential.</strong></p>
+                        <p>This is how machines will outrun us — not by being stronger, but by learning together.</p>
+                        <p>Remember The age of robots has begun.  <strong>Not in a lab, Not in a warehouse, But in your house — where they can watch, learn, adapt… and evolve.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>  
+
+
+
+
+
+                    
+                    <!-- end of technology and ai -->
+
+
+
+
+
+
+
+                    <div class="story" id="public-health">
+
+                        <h2 class="recent-post-title">Japan Under Siege: Flu Surge Sparks Nationwide Alarm
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p> 
+                        <h4>Japan’s Early Flu Wave Strikes Hard</h4>
+                        <p>
+                            Yuto, a 7-year-old from Osaka, shivers under his blanket, 
+                            forehead burning with fever. His school has shut down, and his parents are frantic, rushing from pharmacy to pharmacy in search of medicine. Across Japan, countless families are living the same nightmare—caught unprepared by a flu 
+                            season that arrived earlier and more aggressively than anyone anticipated.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Hospitals on the Brink</h4>
+                        <p>
+                            In Tokyo and Osaka, emergency rooms are overflowing with patients 
+                            suffering from high fevers, body aches, and relentless coughs. Clinics report hours-long waits, and some hospitals are operating at near capacity. Doctors warn that without swift intervention, the elderly 
+                            and children, most vulnerable to the virus, could face severe complications.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Schools Shuttered, Children at Risk</h4>
+                        <p>
+                            Dozens of schools across Japan have already shut their doors to contain the virus. Parents are left juggling work and childcare, while children, many of whom have never faced such an aggressive flu season, are struggling to recover at home. The combination of resumed travel, 
+                            waning immunity, and a fast-spreading strain has created a perfect storm.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Citizens Scramble for Protection</h4>
+                        <p>
+                            Pharmacies are reporting unprecedented demand for flu medication and 
+                            vaccines. Long lines form outside clinics as worried families try to get inoculated before it’s too late. Masks are back in vogue, and strict hygiene routines have returned to daily life, but experts
+                            warn that these measures may not be enough to stop the virus’s rapid advance.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Government Races Against Time</h4>
+                        <p>
+                            The Japanese government is stepping up campaigns to encourage vaccination and early treatment, while schools are revising schedules to prevent further outbreaks. Citizens brace for what could be one of the harshest flu seasons 
+                            in years, as winter approaches and the virus shows no signs of slowing down.
+                        </p>
+                      
+                    </div> 
+                     <!--end of public health  -->
+
+
+
+                    <!-- space -->
+                    <div class="story" id="space">
+
+                        <h2 class="recent-post-title">A Stranger Among the Planets: 3I/ATLAS Leaves Scientists Baffled
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p> 
+                        <h4>3I/ATLAS: The Cosmic Visitor That Flew Through Our Solar System</h4>
+                        <p>
+                            In the quiet skies over Chile, a telescope named ATLAS spotted something extraordinary in July 2025 — a mysterious visitor zipping through the solar system at breathtaking speed. This wasn’t your ordinary comet; it was 3I/ATLAS, only the third known interstellar object to ever reach us, a traveler from beyond the stars.
+                        <div class="line"></div>
+
+                        <h4>The Alien Stranger</h4>
+                        <p>
+                            3I/ATLAS arrived from the depths of space, hurtling toward the Sun at an astonishing 58 kilometers per second. Its hyperbolic trajectory made one thing clear: it didn’t belong here. Scientists believe it may have originated in the Milky Way’s thick disk, possibly billions of years old — a relic from a distant corner of our galaxy.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>A Comet Like No Other</h4>
+                        <p>
+                            As 3I/ATLAS neared the Sun, astronomers observed its glowing coma. Unlike any comet in our solar system, its gases were unusually rich in carbon dioxide, not water, hinting at an origin under alien conditions. Every observation became a rare 
+                            opportunity to peek into the chemistry of worlds far beyond our own.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>A Fleeting Opportunity</h4>
+                        <p>
+                            Though it will never return, 3I/ATLAS left a lasting impression. Astronomers around the world trained their instruments on it, collecting invaluable data to understand how planetary systems in the galaxy form and evolve. This cosmic wanderer, though brief in our skies, offered a glimpse of mysteries that lie light-years away.
+                        </p>
+
+
+                        <h2 class="recent-post-title second-story">Chinese Taikonauts Delayed After Space Debris Damages Return Capsule
+                        </h2>
+                        <p class="author">By Paul | 30th November 2025</p> 
+                        <!-- Clickable Thumbnail for YouTube Video -->
+                        <div style="position: relative; display: inline-block; max-width:360px; width:100%; cursor: pointer; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: transform 0.2s; margin: 0; padding: 0;">
+                        <a href="https://youtu.be/n6rjVD3IdYY" target="_blank" rel="noopener noreferrer" style="display: block; margin:0; padding:0;">
+                            <!-- Video Thumbnail -->
+                            <img src="https://img.youtube.com/vi/n6rjVD3IdYY/maxresdefault.jpg" 
+                                alt="YouTube Video Thumbnail" 
+                                style="width:100%; display:block; margin:0; padding:0; border:0;">
+                            <!-- Play Button Overlay -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" 
+                                alt="Play Button" 
+                                style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:64px; height:64px; pointer-events:none; border:0;">
+                        </a>
+                        </div>
+                        <h4>Taikonauts in Peril: Space Debris Strikes Shenzhou‑20</h4>
+                        <p>
+                            China’s Shenzhou‑20 crew, returning from six months aboard the Tiangong space station, had their mission delayed after their return capsule was damaged by space debris, causing tiny cracks in a window. For safety, the taikonauts returned aboard the Shenzhou‑21 capsule instead. The incident highlights the growing risks of orbital debris and the importance of monitoring and protecting spacecraft in increasingly crowded orbits.
+                        </p>
+
+
+
+                        <h2 class="recent-post-title second-story">Meet New Glenn: The Giant Rocket Carrying Science to Mars
+                        </h2>
+                        <p class="author">By Paul | 30th November 2025</p> 
+                        <!-- Clickable Thumbnail for Blue Origin New Glenn Launch -->
+                        <div style="position: relative; display: inline-block; max-width:360px; width:100%; cursor: pointer; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.3); transition: transform 0.2s; margin: 0; padding: 0;">
+                        <a href="https://www.youtube.com/watch?v=ryHYvLZi8eY" target="_blank" rel="noopener noreferrer" style="display: block; margin:0; padding:0;">
+                            <!-- Video Thumbnail -->
+                            <img src="https://img.youtube.com/vi/ryHYvLZi8eY/maxresdefault.jpg" 
+                                alt="Blue Origin New Glenn NASA ESCAPADE Mission to Mars" 
+                                style="width:100%; display:block; margin:0; padding:0; border:0;">
+                            <!-- Play Button Overlay -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" 
+                                alt="Play Button" 
+                                style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:64px; height:64px; pointer-events:none; border:0;">
+                        </a>
+                        </div>
+                        <h4>Blue Origin’s New Glenn: Reaching for Mars</h4>
+                        <p>
+                            The night sky over Florida ignited as New Glenn thundered upward, a colossal metal titan piercing the darkness. Onboard, twin NASA probes — Blue and Gold — began their lonely journey to Mars, carrying humanity’s questions across millions of miles.
+                        </p>
+                        <p>
+                            Below, engineers held their breath as the rocket’s first stage glided back to Earth, a perfect, silent landing. Reusable, relentless, unstoppable — New Glenn wasn’t just a rocket. It was a statement: the next chapter of humanity is written in the stars, and the cost of failure is unimaginable.
+                        </p>
+                      
+                    </div>  
+
+
+                    
+
+
+
+
+
+
+                    
+                        
+                        
+                        
+                        
+                        
+                     
+
+
+                        
+                        
+                       
+                   
+                   
+                </div>
+
+
+
+                
+            </div>
+
+            <!-- side bar -->
+            <div class="side-bar single">
+               
+             
+
+                
+                <div class="section popular">
+                    <h2 class="section-title">POPULAR POSTS</h2>
+
+                    <div class="post clearfix">
+                        <img src="../images/popular-post/conflicts.avif">
+                        <h6><a href="popular-post.html?id=gunsblazing" class="titles">CONFLICTS & GEOPOLITICAL TENSIONS</a></h6>
+                    </div>
+                     <div class="post clearfix">
+                        <img src="../images/popular-post/Environmental-Issues.jpg">
+                       <h6> <a href="popular-post.html?id=Climate-and-Environment" class="titles">CLIMATE & ENVIRONMENT</a></h6>
+                    </div>
+                     <div class="post clearfix">
+                        <img src="../images/popular-post/tech-ai.jpeg">
+                        <h6><a href="popular-post.html?id=technology-and-ai" class="titles">TECHNOLOGY & AI</a></h6>
+                    </div>
+                     <div class="post clearfix">
+                        <img src="../images/popular-post/public-health.jpg" alt="">
+                        <h6><a href="popular-post.html?id=public-health" class="titles">PUBLIC HEALTH</a></h6>
+                    </div>
+                    <div class="post clearfix">
+                        <img src="../images/popular-post/space.jpg" alt="">
+                       <h6> <a href="popular-post.html?id=space" class="titles">SPACE</a></h6>
+                    </div>
+
+                </div>
+
+                <div class="section topics">
+                    <h2 class="section-title">TOPICS</h2>
+                    <ul>
+                        <li><a href="topic.html?id=prayer">Prayers</a></li>
+                        <li><a href="topic.html?id=poems">Poems</a></li>
+                        <li><a href="topic.html?id=fictions">Fictions</a></li>
+                        <li><a href="topic.html?id=motivation">Motivation</a></li>
+                        <li><a href="topic.html?id=life_lessons">Life lessons</a></li>
+                    </ul>
+                </div>
+
+                <div class="section popular">
+                 <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DQqwbxRjAtl/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DQqwbxRjAtl/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DQqwbxRjAtl/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Klolan&#39;s Blog (@klolansblog)</a></p></div></blockquote>
+                 
+                </div>
+            </div>
+        </div>
+
+
+        
+
+    </div>
+    <!-- end of page wrapper -->
+
+
+    <!-- coookie popup -->
+    <div class="cookie-overlay" id="cookieOverlay"></div>
+    <div class="cookie-container" id="cookiePopup">
+        <div class="cookie-box">
+            <i class="fas fa-cookie-bite"></i>
+            <h2>Cookie Consent</h2>
+        </div>
+
+        <div class="cookie-text">
+            <p>
+                We use cookies to enhance site performance, analyze traffic, and provide you with a better experience. 
+                By clicking <strong>Got it</strong> you concent to our use of cookies. To find out more read our <a href="" target="_blank">Privacy Policy</a> and <a href="" target="_blank">Cookie Policy</a>
+
+            </p>
+        </div>
+        <div class="cta">
+            <button class="ctas" id="acceptBtn">Got it</button>
+            <button class="ctas" id="declineBtn">Decline</button>
+        </div>
+
+
+
+    </div>
+    <button id="undoBtn" class="undo-btn" style="display:none;">Undo Cookie: <br>CONFRIM FINAL CHOICE</button>
+    <!-- end of cookie -->
+
+
+
+      <!-- start of chatbot -->
+    <button id="chatbot-toggler">
+        <span class="material-symbols-rounded"> mode_comment</span>
+        <span class="material-symbols-rounded"> close</span>
+    </button>
+
+
+    <div class="chatbot-popup">
+        <!-- CHATBOT HEADER -->
+        <div class="chatbot-header">
+            <div class="header-info">
+                <img src="../images/chatbot-image/chatbot.png" style="width: 30px; height: 30px;" class="chatbot-logo">
+                <h2 class="logo-text">chatbot</h2>
+            </div>
+            <button class="material-symbols-rounded" id="close-chatbot" >keyboard_arrow_down</button>
+        </div>
+
+
+        <!-- CHATBOT BODY -->
+        <div class="chat-body">
+            <div class="message bot-message">
+                <img src="../images/chatbot-image/black-chatbot.png" style="width:30px;height:30px;object-fit:contain;">
+                <div class="message-text">Hey there  👋<br> How can i help you
+                today?</div>
+            </div>
+             
+        </div>
+
+        <!-- CHATBOT FOOTER -->
+        <div class="chatbot-footer">
+            <form action="#" class="chat-form">
+                <textarea  placeholder="Message...." class="message-input" required></textarea>
+                <div class="chat-controls">
+                    <button type="button" id="emoji-picker" class="material-symbols-rounded">sentiment_satisfied</button>
+                    <div class="file-upload-wrapper">
+                        <input type="file" accept="images/*" id="file-input" hidden>
+                        <img src="#">
+                        <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+                        <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+                    </div>
+                    
+                    <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end of chatbot -->
+
+
+
+    
+    <!-- footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>KLOLANS<span>BLOG</span></h2>
+                <p>
+                     Welcome to KLOLANSBLOG, we deliver the latest news, insights, and stories that matter. From politics and business to lifestyle and entertainment, we keep you informed, inspired, and connected every day.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i>&nbsp; 123-345-789</span>
+                    <span><i class="fas fa-envelope"></i>&nbsp; info@klolan.com</span>
+                </div>
+                <div class="socials">
+                    <a href="https://instagram.com/klolansblog" target="_blank">
+                    <i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@YOUR_USERNAME" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <br>
+                <ul>
+                    <a href="PDF/privacy policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="PDF/Terms and Conditions.pdf" target="_blank">Terms and Conditions</a>
+                    <a href="PDF/cookie policy.pdf" target="_blank">Cookie Policy</a>
+                    <a href="">Events</a>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-form">
+                <h2>Contact Us</h2>
+                <br>
+                <form action="#">
+                    <input type="" name="" class="text-input contact-input" placeholder="Email Address....">
+                    <textarea name=""  rows="4" class="text-input contact-input"  placeholder="Message"></textarea>
+                    <button class="btns btns-big contact-btns"><i class="fas fa-envelope"></i> Send</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; www.klolansblog.com | Designed By JOA
+        </div>
+    </footer>
+
+
+   <script src="../Js/main.js"></script>
+   <!-- emoji mart script for emoji picker -->
+   <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+
+
+</body>
+</html>

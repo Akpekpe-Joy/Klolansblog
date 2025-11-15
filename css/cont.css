@@ -1,0 +1,226 @@
+.contact-bg{
+    height: 40vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .5)), url(../images/contact.jpg);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-bg h3{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.contact-bg h2{
+    font-size: 3rem;
+    padding: 0.4rem 0;
+    letter-spacing: 4px;
+}
+.lines div{
+    margin: 0 0.2rem;
+}
+.lines div:nth-child(1),
+.lines div:nth-child(3){
+    height: 3px;
+    width: 70px;
+    background: #f7327a;
+    border-radius: 5px;
+}
+.lines{
+    display: flex;
+    align-items: center;
+}
+.lines div:nth-child(2){
+    width: 10px;
+    height: 10px;
+    background: #f7327a;
+    border-radius: 50%;
+}
+.contact-bg .text{
+    font-weight: 400;
+    margin: 1.6rem 0;
+    font-size: 17px; 
+    padding: 0 20px; 
+}
+
+
+.contact-body{
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.contact-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px 30px;
+    margin: 2rem 0;
+}
+.contact-info a i {
+  font-size: 1.5rem;
+  color: #f7327a;
+  transition: color 0.3s ease;
+}
+
+.contact-info a i:hover {
+  color: #c7c7c7;
+}
+
+.contact-info span{
+    display: block;
+}
+.contact-info div{
+    margin: 0.8rem 0;
+    padding: 1rem;
+}
+.contact-info span .fas{
+    font-size: 2rem;
+    padding-bottom: 0.9rem;
+    color: #f7327a;
+}
+
+/* form */
+.contact-form-container {
+    padding: 3rem 0;
+    border-top: 1px solid #c7c7c7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem; /* adds space between form and image */
+}
+
+.contact-form-container form,
+.contact-form-container > div
+{
+    flex: 2; /* each takes up 50% of the width */
+}
+.contact-form-container > div {
+    flex: 1;
+    
+}
+
+.contact-form-container form {
+    /* padding-bottom: 1rem; */
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.form-control {
+    width: 100%;
+    border: 1.5px solid #c7c7c7;
+    border-radius: 5px;
+    padding: 0.7rem;
+    margin: 0.6rem 0;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 6px -3px rgba(48, 48, 48, 1);
+}
+
+.contact-form-container form div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.6rem;
+}
+
+.send-btn {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #fff;
+    background: #f7327a;
+    border-radius: 5px;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.send-btn:hover {
+    opacity: 0.8;
+}
+
+.contact-form > div {
+    text-align: center;
+}
+
+.contact-form > div img {
+    width: 100%;
+    max-width: 400px; /* optional: limits image size on big screens */
+    height: auto;
+}
+
+
+
+
+/* Tablets */
+@media (max-width: 750px) {
+    .contact-bg {
+        height: auto;
+        padding: 4rem 1rem;
+    }
+
+    .contact-bg h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+   .contact-form-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-form-container form {
+    /* padding-bottom: 1rem; */
+    padding: 1.5rem;
+}
+
+    .contact-form-container form div {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-container > div {
+        margin-left: 0;
+    }
+
+    .contact-form-container form,
+   .contact-form-container > div {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+   .contact-form-container > div img {
+        max-width: 300px;
+    }
+      .send-btn {
+        width: 100%;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+    .contact-bg h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-bg h3 {
+        font-size: 1rem;
+    }
+
+    .contact-info div {
+        margin: 0.5rem 0;
+    }
+
+    .send-btn {
+        width: 100%;
+    }
+}

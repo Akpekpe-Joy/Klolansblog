@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlolansBlog</title>
+
+    <!-- google fontawesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <header>
+        <input type="radio" name="slide" id="menu_btn" class="input_radio">
+        <input type="radio" name="slide" id="cancel_btn" class="input_radio">
+        <label for="menu_btn" class="menu_btn"><i class="fa fa-bars"></i></label>
+        <a href="#" class="logo">
+            KLOLANS<span>BLOG</span>
+        </a>
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <label for="cancel_btn" class="cancel_btn"><i class="fa fa-times"></i></label>
+        </div>
+        <a href="javascript:void(0)" class="subscribe-btn" id="openModal">Subscribe</a>
+    </header>
+    <!-- End of Header -->
+
+
+
+    <!-- subscribe button -->
+    <div class="modal-container">
+        <div class="contact-box">
+            <button class="close-btn">&times;</button>
+            <div class="modal-left">
+                <img src="images/subscribe.jpg" alt="">
+            </div>
+            <div class="modal-right">
+                <form action="" id="subscribeForm">
+
+                    <h2>Subcribe to our news letter</h2>
+                    <p>
+                        Love what you’re reading?
+                        Subscribe and we’ll send you our latest blog posts 
+                        and insights.
+                    </p>
+                    <input type="email" name="" class="field" placeholder="Your Email" required>
+                                
+                        <button  class="button">Subscribe</button>
+                </form>
+             </div>  
+        </div> 
+    </div> 
+    <!-- end of subscribe button -->
+
+    <div class="page_wrapper">
+
+
+        
+
+    </div>
+
+
+
+
+    
+    <!-- footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>KLOLANS<span>BLOG</span></h2>
+                <p>
+                     Welcome to KLOLANSBLOG, we deliver the latest news, insights, and stories that matter. From politics and business to lifestyle and entertainment, we keep you informed, inspired, and connected every day.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i>&nbsp; 123-345-789</span>
+                    <span><i class="fas fa-envelope"></i>&nbsp; info@klolan.com</span>
+                </div>
+                <div class="socials">
+                    <a href="https://instagram.com/klolansblog" target="_blank">
+                    <i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@YOUR_USERNAME" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <br>
+                <ul>
+                    <a href="PDF/privacy policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="PDF/Terms and Conditions.pdf" target="_blank">Terms and Conditions</a>
+                    <a href="PDF/cookie policy.pdf" target="_blank">Cookie Policy</a>
+                    <a href="">Events</a>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-form">
+                <h2>Contact Us</h2>
+                <br>
+                <form action="#">
+                    <input type="" name="" class="text-input contact-input" placeholder="Email Address....">
+                    <textarea name=""  rows="4" class="text-input contact-input"  placeholder="Message"></textarea>
+                    <button class="btns btns-big contact-btns"><i class="fas fa-envelope"></i> Send</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; www.klolansblog.com | Designed By JOA
+        </div>
+    </footer>
+
+
+    <script src="Js/main.js"></script>
+
+</body>
+</html>

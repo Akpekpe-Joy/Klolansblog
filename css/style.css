@@ -1,0 +1,377 @@
+
+/* Trending Post Carousel-container  */
+.carousel-container{
+    padding: 60px 50px 100px 50px;
+    position: relative;
+
+}
+.carousel-container .carousel-box{
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    
+}
+.carousel-container  h3{
+    text-align: center;
+    padding-bottom: 40px;
+    font-family: 'candal';
+    color: #222;
+    
+}
+.carousel-box .carousel{
+    max-width: 100%;
+    overflow: hidden !important;
+   
+}
+.carousel .cards-box{
+    display: flex;
+    padding: 10px;
+    gap: 14px;
+    transition:  transform .4s ease-in-out;
+
+}
+.cards-box .card{
+   
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;  /* makes the border radius take effect on the image */
+    background: #fff;
+    flex: 0 0 calc((100% - 28px) / 3);
+    box-shadow: 0 2px 3px rgba(0,0,0,.5); 
+}
+
+.cards-box .card:hover{
+    cursor: pointer;
+}
+.card img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+
+}
+.card .card-contents{
+    padding: 20px;
+    font-family: 'candal';   
+    
+}
+.card .card-contents a:hover{
+    color: #777;
+}
+.card .card-contents span {
+    font-size: 12px;
+    
+   
+}
+
+.card .card-contents span i{
+    padding-top: 10px;
+    
+}
+.card .card-contents a{
+    color: #222;
+}
+.carousel-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    z-index: 10px;
+    background: transparent;
+}
+.carousel-btn i{
+    font-size: 40px;
+    color: #222;
+}
+.carousel-btn.prev{
+    left: -70px;
+}
+.carousel-btn.next{
+    right: -70px;
+}
+.carousel-dots{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
+}
+.carousel-dots .dot{
+    width: 10px;
+    height: 10px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.carousel-dots .dot.active{
+    background-color:#333;
+} 
+/*End of Trending Post Carousel-container */
+
+
+
+
+
+
+
+/* Start Recent Posts */
+.content{
+  width: 90%;
+  margin: 30px auto 30px;
+  
+}
+.content .main-content{
+  margin-top: 30px;
+  width: 70%;
+  float: left;
+  
+  
+}
+.content .main-content .recent-post-heading{
+    margin-left: 22px;
+    font-family: 'candal';
+    color: #222;
+}
+.content .main-content .post{
+  width: 95%;
+  height: 270px;
+  margin: 20px auto;
+  border-radius: 4px;
+  background: white;
+  position: relative;
+  color: #222;
+}
+.content .main-content .post .read-more{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 15px;
+    background: #c00;
+    color: #fff;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+.content .main-content .post .read-more:hover{
+    background: transparent;
+    color: #c00;
+    border: 1px solid #c00;
+}
+.content .main-content .post .post-image{
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+.content .main-content .post .post-preview{
+  width: 60%;
+  float: right;
+  padding: 10px 20px ;
+}
+.content .main-content .post .post-preview .preview-text{
+  margin: 5px 0;
+  height: auto;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.content .main-content .post .post-preview span{
+    font-size: 13px;
+}
+.content .main-content .recent-post-title {
+  margin: 20px 0 4px 0px;
+  font-weight: 200;
+  font-size: 14px;
+  font-family: 'candal';
+  
+}
+
+
+.content .side-bar{
+  width: 30%;
+  float: left;
+  margin-top: 5.2rem;
+}
+.content .side-bar .section{
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.content .side-bar .section .section-title{
+  margin: 10px 0 15px 0;
+  font-family: 'candal';
+}
+
+.content .side-bar .section .text-input{
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.content .side-bar .section.topics ul{
+  border-top: 1px solid #e0e0e0;
+}
+.content .side-bar .section.topics ul li a {
+  display: block;
+  padding: 15px 0 15px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  letter-spacing: .5px;
+  font-size: 13px;
+  color: #222;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all .3s ease;
+}
+.content .side-bar .section.topics ul li a:hover{
+  padding-left: 15px;
+  color: #8f8c8c;
+  transition: all .3s ease;
+  
+}
+/* End of Recent Posts */
+
+
+/* cube container */
+.cube-wrapper{
+    margin:  40px auto 30px;
+    width: 80px;
+    height: 80px;
+    perspective: 1000px;
+}
+.cube{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation:  rotate 10s linear infinite;
+}
+.cube div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    box-shadow: inset 0 0  50px rgba(0, 0, 0, 4);
+}
+.front{transform: translateZ(40px);}
+.back{transform: rotateY(180deg) translateZ(40px);}
+.right{transform: rotateY(90deg) translateZ(40px);}
+.left{transform: rotateY(-90deg) translateZ(40px);}
+.top{transform: rotateX(90deg) translateZ(40px);}
+.bottom{transform: rotateX(-90deg) translateZ(40px);}
+
+@keyframes rotate{
+    0%{transform: rotateX(0deg) rotateY(0deg); }
+    100%{transform: rotateX(360deg) rotateY(360deg); }
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section.topics.kpop a{
+    color: #222;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+}
+
+
+
+
+/* RESPONSIVE */
+@media(min-width:1024px){
+     /* carousel */
+    .carousel-btn.prev{left: -50px;}
+    .carousel-btn.next{right: -50px;}
+    
+}
+
+@media(min-width:1200px){
+    .content{
+        width: 85%;
+    }
+    .content .main-content{
+        width: 72%;
+    }
+    .content .side-bar{
+        width: 28%;
+    }
+   
+}
+@media(max-width:1199px){
+    .content{
+        width: 90%;
+    }
+    .content .main-content{
+        width: 65%;
+    }
+    .content .side-bar{
+        width: 35%;
+    }
+}
+
+@media(max-width:950px){
+    .carousel-btn{
+        display: none;
+    }
+    .cards-box .card{
+        flex: 0 0 calc((100% - 14px) / 2);
+    }
+    .carousel .cards-box{
+        gap: 20px;
+    }
+
+    /* recent posts */
+    .content{
+        width: 100%;
+    }
+    .content .main-content{
+        width: 100%;
+        padding: 20px;
+        float: none;
+    }
+   .content .main-content .post{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin: 15px 0;
+   }
+   .content .main-content .post .post-image{
+        width: 100%;
+        height: auto;
+   }
+   .content .main-content .post .post-preview{
+        width: 100%;
+        padding: 15px;
+   }
+   .content .main-content .post .read-more{
+        position: static;
+        margin: 15px 0 5px 5px;
+        display: inline-block;
+   }
+   .content .side-bar{
+        float: none;
+        width: 100%;
+        padding: 20px;
+        margin-top: 20px;
+   }
+   
+}
+
+@media(max-width:600px){
+    .cards-box .card{
+        flex: 0 0 100%;
+    }
+}
+
+
+
+

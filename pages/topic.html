@@ -1,0 +1,551 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlolansBlog</title>
+
+    <!-- google fontawesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <style>
+        
+        .content{
+            width: 80%;
+            margin: 30px auto;
+            display: flex;
+            gap: 20px;
+        }
+        .content .main-content{
+            flex: 2;
+            background: #fff;
+            border-radius: 4px;
+            padding: 70px;
+            box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .main-content .post-content .recent-post-title{
+            font-family: 'candal';
+            font-family: 200;
+            color: #222;
+        
+        }
+        .main-content .post-content .author{
+            font-size: 13px;
+            margin: 5px 0 15px 0;
+            color: #555;
+            font-weight: 600;
+        }
+        
+        .main-content .post-content h4{
+            padding: 30px 0 10px 0;
+            font-family: 'candal';
+            color: #222;
+        }
+        .main-content .post-content p{
+        color: #555;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+        }
+        .content .side-bar{
+        flex: 1;
+        border-radius: 4px;
+        }
+        .content .side-bar .section{
+        background: #fff;
+        padding: 20px;
+        border: 4px;
+        margin-bottom: 20px;
+        box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .content .side-bar .section.topics{
+        margin-top: 20px;
+        background: #fff;
+        box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .content .popular .post{
+        border-top: 1px solid #e0e0e0;
+        margin-top: 10px;
+        padding-top: 10px;
+        }
+        .content .popular .post img
+        {
+        height: 50px;
+        width: 50px;
+        float: left;
+        margin-right: 10px;
+        box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .content .popular .post a{
+        color: #555;
+        font-weight: 700;
+        letter-spacing: .5px;
+            transition: all .3s ease;
+        }
+
+
+        .content .side-bar .section .section-title{
+        margin: 10px 0 15px 0;
+        font-family: 'Candal', serif;
+        color: #222;
+        }
+        .content .side-bar .section.topics ul{
+        border-top: 1px solid #e0e0e0;
+        }
+        .content .side-bar .section.topics ul li a{
+        display: block;
+        color: #555;
+        padding: 15px 0 15px 8px;
+        border-bottom: 1px solid #e0e0e0;
+        letter-spacing: .5px;
+        font-size: 13px;
+        font-weight: 700;
+        transition: all .3s ease;
+        }
+        .content .side-bar .section.topics ul li a:hover,
+        .content .popular .post a:hover{
+        padding-left: 10px;
+        color: #222;
+        
+        }
+
+
+
+
+        /* responsive Media Queries */
+        @media(min-width:1200px)
+        {
+            .content{width: 85%;}
+            .content .main-content{width: 72%;}
+            .content .side-bar{width: 28%;}
+        }
+        @media(max-width:1199px){
+        .content{width: 90%;}
+        .content .main-content{width: 65%;}
+        .content .side-bar{width: 35%;}
+
+        }
+        @media(max-width:991px){
+        .content{flex-direction: column;}
+        .content .main-content,
+        .content .side-bar{
+            width: 100%;
+        }
+        .content .main-content{
+            padding: 70px 30px;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <input type="radio" name="slide" id="menu_btn" class="input_radio">
+        <input type="radio" name="slide" id="cancel_btn" class="input_radio">
+        <label for="menu_btn" class="menu_btn"><i class="fa fa-bars"></i></label>
+        <a href="#" class="logo">
+            KLOLANS<span>BLOG</span>
+        </a>
+        <div class="navigation">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <label for="cancel_btn" class="cancel_btn"><i class="fa fa-times"></i></label>
+        </div>
+        <a href="javascript:void(0)" class="subscribe-btn" id="openModal">Subscribe</a>
+    </header>
+    <!-- End of Header -->
+
+
+
+  
+
+    <div class="page_wrapper">
+
+          <div class="content clearfix">
+            <div class="main-content single">
+                <div class="post-content">
+
+                    <div class="story" id="prayer">
+                        <h2 class="recent-post-title">Finding Strength in Silence: A Prayer to Carry You Through.
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+                        <h4>Embracing Hope in Every Breath</h4>
+                        <p>
+                            When life feels heavy and the road ahead uncertain, there is a quiet power in prayer. It is more than words—it 
+                            is a lifeline, a moment to breathe, reflect, and reach beyond yourself.
+                        </p>
+
+                        <p>
+                            Imagine pausing for just a moment, closing your eyes, and opening your heart. In that space, courage flows, clarity emerges, and hope whispers that even the smallest steps forward can lead to remarkable change.
+                        </p>
+
+                        <p>
+                            Prayer calls us to face challenges boldly, embrace the unknown with faith, and find peace in what we cannot control. It reminds us to see the beauty in simple blessings and to act with kindness toward those around us.
+                        </p>
+                        <p>
+                            Let this be a prayer not of asking, but of receiving—strength for your spirit, light for your path, and the quiet courage to keep moving forward, no matter how stormy the day may feel.
+                        </p>
+                    </div>
+                    <!-- end of prayer -->
+
+
+                    <div class="story" id="poems">
+                        <h2 class="recent-post-title">Shadows of a Forgotten Song: When Memories Sing in Silence.
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+                        <h4>The Echoes of Lost Melodies</h4>
+                        <p>
+                            In the quiet corners of memory, there exist songs we once knew but can no longer hum. Shadows of a Forgotten Song isn’t just a poem—it’s a journey into those fleeting echoes, melodies that linger like ghosts at the edges of our minds. Each line pulls readers into a world where music and memory intertwine, evoking abandoned ballrooms, empty streets, and whispered voices time has claimed.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4> Nostalgia Wrapped in Poetry</h4>
+                        <p>
+                           The poem delicately balances melancholy with a sense of hope. While it recalls what is gone, it also reminds us that even forgotten songs shape who we are. They echo in our choices, our silences, and the quiet moments of reflection. Each stanza reads like a note in a symphony of memory, each pause a breath, resonating with universal feelings of loss and remembrance.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4> A Symphony of Human Experience</h4>
+                        <p>
+                           Readers often describe the experience as both haunting and comforting. Everyone carries their own forgotten songs—fragments of life that refuse to fade entirely. Through its subtle imagery and rhythmic flow, the poem transforms memory into music, creating a bridge between the personal and the collective, the past and the present.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Remembering the Invisible Threads</h4>
+                        <p>
+                            Shadows of a Forgotten Song is more than words on a page—it’s an invitation to pause, listen, and remember. It reminds us that even in silence, the melodies of our lives continue to speak. In embracing these lost songs, we reconnect with the unseen threads that bind all human experience.
+                        </p>
+                        
+                    </div>
+                    <!-- end of poems -->
+
+                    
+                    <div class="story" id="fictions">
+                        <h2 class="recent-post-title">The Rise of Dystopian Worlds: How Modern Fiction Mirrors Real-Life Fears
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+                        <h4>Fiction as a Mirror</h4>
+                        <p>
+                            In recent years, dystopian fiction has surged in popularity, captivating readers and audiences worldwide. From the stark oppression of The Hunger Games to the haunting surveillance state of 1984, these imagined worlds are more than mere entertainment—they reflect our deepest anxieties about society, politics, and the future.
+                        </p>
+                        <p>
+                            Dystopian stories act as a lens through which we examine our own reality. Rising inequality, environmental collapse, political unrest, and the rapid advance of technology often find their way into these narratives. The fear of authoritarian regimes, loss of personal freedoms, or societal breakdown resonates with readers who see fragments of today’s world in these cautionary tales.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>The Allure of the “What If</h4>
+                        <p>
+                            There’s a strange comfort in exploring worst-case scenarios on the page or screen. By confronting chaos in a controlled setting, audiences can process anxiety and imagine solutions to real-life challenges. The oppressive worlds of fiction allow us to reflect on morality, ethics, and the human capacity to survive—even thrive—in adversity.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>  Why It Matters Today</h4>
+                        <p>
+                          As global challenges intensify, dystopian fiction becomes increasingly relevant. It reminds us of the fragility of social structures and the consequences of neglecting environmental, political, or technological risks. These stories don’t just entertain—they provoke thought, spark debate, and sometimes even inspire action.
+                        </p>
+                        <p>
+                            In a world where headlines often feel stranger than fiction, dystopian literature continues to thrive, holding a mirror up to our collective fears while challenging us to imagine a better future.
+                        </p>
+
+                        
+                    </div>
+                    <!-- end of fiction -->
+
+                    
+                
+                    <div class="story" id="motivation">
+                        <h2 class="recent-post-title">Rising Every Time You Fall: The Power of Resilience.
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+                        <h4>See Setbacks as Stepping Stones</h4>
+                        <p>
+                            Life doesn’t hand out guarantees, and setbacks are part of the journey. Missed opportunities, failed projects, heartbreaks—everyone faces moments that shake their spirit. What separates those who succeed from those who quit isn’t luck—it’s resilience.    
+                        </p>
+                        <p>
+                            Failures aren’t dead ends—they’re lessons in disguise. Each obstacle shows you what you’re capable of, exposes your limits, and teaches you how to grow. The most successful people often have a long list of failures behind them—they simply refused to stay down.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Consistency Wins Over Motivation</h4>
+                        <p>
+                            Motivation comes and goes. Consistency is what transforms dreams into reality. Resilient people don’t wait to feel inspired—they show up, day after day, even when the path is uncertain. Small, steady actions compound, building momentum toward big breakthroughs.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Mindset Shapes Your Reality</h4>
+                        <p>Believing you can overcome challenges is half the battle. Positive self-talk, visualizing success, and celebrating small wins strengthen your mindset. A resilient mindset doesn’t ignore obstacles—it equips you to face them with focus, courage, and determination.</p>
+                        <div class="line"></div>
+
+                        <h4>Inspire Through Your Journey</h4>
+                        <p>
+                            Rising after a fall is more than personal victory—it’s contagious. Your story of perseverance can light the way for others, proving that challenges aren’t walls, but doors waiting to be opened.
+                            Life isn’t about avoiding the storm—it’s about learning to dance in the rain. Every setback, every hurdle, is a chance to rise stronger, smarter, and more unstoppable than ever before.
+                        </p>
+                        
+                    </div>
+                    <!-- end of life motivation -->
+
+                     <div class="story" id="life_lessons">
+                        <h2 class="recent-post-title">The Subtle Art of Letting Go: Learning Life’s Hardest Lessons
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+                        
+                        <h4>Holding On Can Hurt More Than Letting Go</h4>
+                        <p>
+                            Life often teaches its toughest lessons through moments we least expect. From failed relationships to missed opportunities, the hardest truths aren’t about what we gain—they’re about what we must release. Letting go is not giving up; it’s making space for growth, peace, and better possibilities.
+                        </p>
+                        <p>
+                            Clinging to the past, grudges, or unrealistic expectations can weigh us down. It’s like carrying invisible baggage that slows every step forward. The sooner we acknowledge what we cannot control, the sooner we free ourselves from unnecessary pain.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Embrace Change, Even When It’s Scary</h4>
+                        <p>
+                            Life is a river, never stagnant. People, circumstances, and even our own dreams evolve. Resisting change often leads to frustration and regret, while embracing it opens doors to unexpected growth. Letting go is less about loss and more about trust—trust in yourself, trust in life, and trust that better chapters await.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Lessons Lie in Every Ending</h4>
+                        <p>
+                            Every ending carries a hidden lesson. Broken friendships, career setbacks, or failed plans teach resilience, self-awareness, and the value of timing. By examining these moments with honesty, we discover patterns, recognize our strength, and prepare for what’s next.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Freedom in Release</h4>
+                        <p>
+                            The paradox of life is that by letting go, we gain control. We can redirect energy toward what truly matters—new goals, meaningful relationships, and experiences that nourish the soul. Life doesn’t stop when we release the past; it accelerates toward clarity and purpose.
+                        </p>
+                        <p>
+                            Letting go is not weakness—it’s wisdom. Every choice to release a burden, forgive, or walk away plants the seeds for a future defined by freedom, growth, and fulfillment.
+                        </p>
+                      
+                        
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!-- side bar -->
+            <div class="side-bar single">
+                
+                <div class="section popular">
+                    <h2 class="section-title">POPULAR POSTS</h2>
+
+                    <div class="post clearfix">
+                        <img src="../images/popular-post/conflicts.avif">
+                        <h6><a href="popular-post.html?id=gunsblazing" class="titles">CONFLICTS & GEOPOLITICAL TENSIONS</a></h6>
+                    </div>
+                     <div class="post clearfix">
+                        <img src="../images/popular-post/Environmental-Issues.jpg">
+                       <h6> <a href="popular-post.html?id=Climate-and-Environment" class="titles">CLIMATE & ENVIRONMENT</a></h6>
+                    </div>
+                     <div class="post clearfix">
+                        <img src="../images/popular-post/tech-ai.jpeg">
+                        <h6><a href="popular-post.html?id=technology-and-ai" class="titles">TECHNOLOGY & AI</a></h6>
+                    </div>
+                     <div class="post clearfix">
+                        <img src="../images/popular-post/public-health.jpg" alt="">
+                        <h6><a href="popular-post.html?id=public-health" class="titles">PUBLIC HEALTH</a></h6>
+                    </div>
+                    <div class="post clearfix">
+                        <img src="../images/popular-post/space.jpg" alt="">
+                       <h6> <a href="popular-post.html?id=space" class="titles">SPACE</a></h6>
+                    </div>
+                    
+                </div>
+
+                <div class="section topics">
+                    <h2 class="section-title">TOPICS</h2>
+                    <ul>
+                        <li><a href="topic.html?id=prayer">Prayers</a></li>
+                        <li><a href="topic.html?id=poems">Poems</a></li>
+                        <li><a href="topic.html?id=fictions">Fictions</a></li>
+                        <li><a href="topic.html?id=motivation">Motivation</a></li>
+                        <li><a href="topic.html?id=life_lessons">Life lessons</a></li>
+                    </ul>
+                </div>
+
+                <div class="section popular">
+                 <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DQqwbxRjAtl/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DQqwbxRjAtl/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DQqwbxRjAtl/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Klolan&#39;s Blog (@klolansblog)</a></p></div></blockquote>
+                 
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+
+    <!-- subscribe button -->
+    <div class="modal-container">
+        <div class="contact-box">
+            <button class="close-btn">&times;</button>
+            <div class="modal-left">
+                <img src="../images/subscribe.jpg" alt="">
+            </div>
+            <div class="modal-right">
+                <form action="" id="subscribeForm">
+
+                    <h2>Subcribe to our news letter</h2>
+                    <p>
+                        Love what you’re reading?
+                        Subscribe and we’ll send you our latest blog posts 
+                        and insights.
+                    </p>
+                    <input type="email" name="" class="field" placeholder="Your Email" required>
+                                
+                        <button  class="button">Subscribe</button>
+                </form>
+             </div>  
+        </div> 
+    </div> 
+    <!-- end of subscribe button -->
+
+
+    <!-- coookie popup -->
+    <div class="cookie-overlay" id="cookieOverlay"></div>
+    <div class="cookie-container" id="cookiePopup">
+        <div class="cookie-box">
+            <i class="fas fa-cookie-bite"></i>
+            <h2>Cookie Consent</h2>
+        </div>
+
+        <div class="cookie-text">
+            <p>
+                We use cookies to enhance site performance, analyze traffic, and provide you with a better experience. 
+                By clicking <strong>Got it</strong> you concent to our use of cookies. To find out more read our <a href="" target="_blank">Privacy Policy</a> and <a href="" target="_blank">Cookie Policy</a>
+
+            </p>
+        </div>
+        <div class="cta">
+            <button class="ctas" id="acceptBtn">Got it</button>
+            <button class="ctas" id="declineBtn">Decline</button>
+        </div>
+
+
+
+    </div>
+    <button id="undoBtn" class="undo-btn" style="display:none;">Undo Cookie: <br>CONFRIM FINAL CHOICE</button>
+    <!-- end of cookie -->
+
+
+    <!-- start of chatbot -->
+    <button id="chatbot-toggler">
+        <span class="material-symbols-rounded"> mode_comment</span>
+        <span class="material-symbols-rounded"> close</span>
+    </button>
+
+
+    <div class="chatbot-popup">
+        <!-- CHATBOT HEADER -->
+        <div class="chatbot-header">
+            <div class="header-info">
+                <img src="../images/chatbot-image/chatbot.png" style="width: 30px; height: 30px;" class="chatbot-logo">
+                <h2 class="logo-text">chatbot</h2>
+            </div>
+            <button class="material-symbols-rounded" id="close-chatbot" >keyboard_arrow_down</button>
+        </div>
+
+
+        <!-- CHATBOT BODY -->
+        <div class="chat-body">
+            <div class="message bot-message">
+                <img src="../images/chatbot-image/black-chatbot.png" style="width:30px;height:30px;object-fit:contain;">
+                <div class="message-text">Hey there  👋<br> How can i help you
+                today?</div>
+            </div>
+             
+        </div>
+
+        <!-- CHATBOT FOOTER -->
+        <div class="chatbot-footer">
+            <form action="#" class="chat-form">
+                <textarea  placeholder="Message...." class="message-input" required></textarea>
+                <div class="chat-controls">
+                    <button type="button" id="emoji-picker" class="material-symbols-rounded">sentiment_satisfied</button>
+                    <div class="file-upload-wrapper">
+                        <input type="file" accept="images/*" id="file-input" hidden>
+                        <img src="#">
+                        <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+                        <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+                    </div>
+                    
+                    <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end of chatbot -->
+
+
+
+
+    
+    <!-- footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>KLOLANS<span>BLOG</span></h2>
+                <p>
+                     Welcome to KLOLANSBLOG, we deliver the latest news, insights, and stories that matter. From politics and business to lifestyle and entertainment, we keep you informed, inspired, and connected every day.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i>&nbsp; 123-345-789</span>
+                    <span><i class="fas fa-envelope"></i>&nbsp; info@klolan.com</span>
+                </div>
+                <div class="socials">
+                    <a href="https://instagram.com/klolansblog" target="_blank">
+                    <i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@YOUR_USERNAME" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <br>
+                <ul>
+                    <a href="PDF/privacy policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="PDF/Terms and Conditions.pdf" target="_blank">Terms and Conditions</a>
+                    <a href="PDF/cookie policy.pdf" target="_blank">Cookie Policy</a>
+                    <a href="">Events</a>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-form">
+                <h2>Contact Us</h2>
+                <br>
+                <form action="#">
+                    <input type="" name="" class="text-input contact-input" placeholder="Email Address....">
+                    <textarea name=""  rows="4" class="text-input contact-input"  placeholder="Message"></textarea>
+                    <button class="btns btns-big contact-btns"><i class="fas fa-envelope"></i> Send</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; www.klolansblog.com | Designed By JOA
+        </div>
+    </footer>
+
+
+    <script src="../Js/main.js"></script>
+
+    <!-- emoji mart script for emoji picker -->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+
+
+</body>
+</html>

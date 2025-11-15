@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlolansBlog</title>
+
+    <!-- google fontawesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    
+
+    <style>
+        .contact-bg{
+            height: 40vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, .5)), url(../images/contact.jpg);
+            background-position: 50% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-bg h3{
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+        .contact-bg h2{
+            font-size: 3rem;
+            padding: 0.4rem 0;
+            letter-spacing: 4px;
+        }
+        .lines div{
+            margin: 0 0.2rem;
+        }
+        .lines div:nth-child(1),
+        .lines div:nth-child(3){
+            height: 3px;
+            width: 70px;
+            background: #f7327a;
+            border-radius: 5px;
+        }
+        .lines{
+            display: flex;
+            align-items: center;
+        }
+        .lines div:nth-child(2){
+            width: 10px;
+            height: 10px;
+            background: #f7327a;
+            border-radius: 50%;
+        }
+        .contact-bg .text{
+            font-weight: 400;
+            margin: 1.6rem 0;
+            font-size: 17px; 
+            padding: 0 20px; 
+        }
+
+
+        .contact-body{
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-info{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            padding: 10px 30px;
+            margin: 2rem 0;
+        }
+        .contact-info a i {
+        font-size: 1.5rem;
+        color: #f7327a;
+        transition: color 0.3s ease;
+        }
+
+        .contact-info a i:hover {
+        color: #c7c7c7;
+        }
+
+        .contact-info span{
+            display: block;
+        }
+        .contact-info div{
+            margin: 0.8rem 0;
+            padding: 1rem;
+        }
+        .contact-info span .fas{
+            font-size: 2rem;
+            padding-bottom: 0.9rem;
+            color: #f7327a;
+        }
+
+        /* form */
+        .contact-form-container {
+            padding: 3rem 0;
+            border-top: 1px solid #c7c7c7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem; /* adds space between form and image */
+        }
+
+        .contact-form-container form,
+        .contact-form-container > div
+        {
+            flex: 2; /* each takes up 50% of the width */
+        }
+        .contact-form-container > div {
+            flex: 1;
+            
+        }
+
+        .contact-form-container form {
+            /* padding-bottom: 1rem; */
+            padding: 1rem 2rem 1rem 2rem;
+        }
+
+        .form-control {
+            width: 100%;
+            border: 1.5px solid #c7c7c7;
+            border-radius: 5px;
+            padding: 0.7rem;
+            margin: 0.6rem 0;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 6px -3px rgba(48, 48, 48, 1);
+        }
+
+        .contact-form-container form div {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 0.6rem;
+        }
+
+        .send-btn {
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: #fff;
+            background: #f7327a;
+            border-radius: 5px;
+            padding: 0.7rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .send-btn:hover {
+            opacity: 0.8;
+        }
+
+        .contact-form > div {
+            text-align: center;
+        }
+
+        .contact-form > div img {
+            width: 100%;
+            max-width: 400px; /* optional: limits image size on big screens */
+            height: auto;
+        }
+
+
+
+
+        /* Tablets */
+        @media (max-width: 750px) {
+            .contact-bg {
+                height: auto;
+                padding: 4rem 1rem;
+            }
+
+            .contact-bg h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+           .contact-form-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .contact-form-container form {
+            /* padding-bottom: 1rem; */
+            padding: 1.5rem;
+        }
+
+            .contact-form-container form div {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-container > div {
+                margin-left: 0;
+            }
+
+            .contact-form-container form,
+            .contact-form-container > div {
+                flex: 1 1 100%;
+                width: 100%;
+            }
+
+        .contact-form-container > div img {
+                max-width: 300px;
+            }
+            .send-btn {
+                width: 100%;
+            }
+        }
+
+        /* Mobile Phones */
+        @media (max-width: 576px) {
+            .contact-bg h2 {
+                font-size: 1.8rem;
+            }
+
+            .contact-bg h3 {
+                font-size: 1rem;
+            }
+
+            .contact-info div {
+                margin: 0.5rem 0;
+            }
+
+            .send-btn {
+                width: 100%;
+            }
+        }
+    </style>
+
+    
+</head>
+<body>
+    
+    <header>
+        <input type="radio" name="slide" id="menu_btn" class="input_radio">
+        <input type="radio" name="slide" id="cancel_btn" class="input_radio">
+        <label for="menu_btn" class="menu_btn"><i class="fa fa-bars"></i></label>
+        <a href="#" class="logo">
+            KLOLANS<span>BLOG</span>
+        </a>
+        <div class="navigation">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <label for="cancel_btn" class="cancel_btn"><i class="fa fa-times"></i></label>
+        </div>
+        <a href="javascript:void(0)" class="subscribe-btn" id="openModal">Subscribe</a>
+    </header>
+    <!-- End of Header -->
+
+
+
+    <!-- subscribe button -->
+    <div class="modal-container">
+        <div class="contact-box">
+            <button class="close-btn">&times;</button>
+            <div class="modal-left">
+                <img src="../images/subscribe.jpg" alt="">
+            </div>
+            <div class="modal-right">
+                <form action="" id="subscribeForm">
+
+                    <h2>Subcribe to our news letter</h2>
+                    <p>
+                        Love what you’re reading?
+                        Subscribe and we’ll send you our latest blog posts 
+                        and insights.
+                    </p>
+                    <input type="email" name="" class="field" placeholder="Your Email" required>
+                                
+                        <button  class="button">Subscribe</button>
+                </form>
+             </div>  
+        </div> 
+    </div> 
+    <!-- end of subscribe button -->
+
+    <div class="page_wrapper">
+
+    <div class = "contact-bg">
+        <h3>Get in Touch with Us</h3>
+        <h2>CONTACT US</h2>
+            <div class = "lines">
+                <div></div>
+                <div></div>
+                <div></div>   
+            </div>
+            <p class = "text"> We'd love to hear from you! Wherther it's a question, collaboration or just a quick hello - your messages mean a lot to us💕.</p>
+        </div>
+             
+        <div class = "contact-body">
+            <div class = "contact-info">
+                <div>
+                    <span><i class = "fas fa-mobile-alt"></i></span>
+                    <span>Phone No.</span>
+                    <span class = "text">8-2392-23928-2</span>
+                </div>
+                <div>
+                    <span><i class = "fas fa-envelope-open"></i></span>
+                    <span>E-mail</span>
+                    <span class = "text">info@klolansblog.com</span>
+                </div>
+                
+                <div>
+                    <span><i class = "fas fa-clock"></i></span>
+                    <span>Opening Hours</span>
+                    <span class = "text">Monday - Friday (9:00 AM to 5:00 PM)</span>
+                </div>
+
+                <div>
+                    <span><i class = "fas fa-share-alt"></i></span>
+                    <span>Follow us</span>
+                    <span class = "text"><a href="https://instagram.com/klolansblog" target="_blank">
+                    <i class="fab fa-instagram"></i></a></span>
+                </div>
+            </div>
+
+            <div class = "contact-form-container">
+                <form>
+                    <div>
+                    <input type = "text" class = "form-control" placeholder="First Name *" required>
+                    <input type = "text" class = "form-control" placeholder="Last Name *" required>
+                    </div>
+                    <div>
+                    <input type = "email" class = "form-control" placeholder="E-mail *" required>
+                    <input type = "text" class = "form-control" placeholder="Phone">
+                    </div>
+                    <textarea rows = "5" placeholder="Message.. *" class = "form-control" required></textarea>
+                    <input type = "submit" class = "send-btn" value = "send message">
+                </form>
+
+                <div>
+                    <img src = "../images/contact-us.webp" alt = "contact us" style="width: 400px;">
+                </div>
+        
+        
+            </div>   
+        </div>
+
+        
+
+    </div>
+
+
+    <!-- coookie popup -->
+    <div class="cookie-overlay" id="cookieOverlay"></div>
+    <div class="cookie-container" id="cookiePopup">
+        <div class="cookie-box">
+            <i class="fas fa-cookie-bite"></i>
+            <h2>Cookie Consent</h2>
+        </div>
+
+        <div class="cookie-text">
+            <p>
+                We use cookies to enhance site performance, analyze traffic, and provide you with a better experience. 
+                By clicking <strong>Got it</strong> you concent to our use of cookies. To find out more read our <a href="" target="_blank">Privacy Policy</a> and <a href="" target="_blank">Cookie Policy</a>
+
+            </p>
+        </div>
+        <div class="cta">
+            <button class="ctas" id="acceptBtn">Got it</button>
+            <button class="ctas" id="declineBtn">Decline</button>
+        </div>
+
+
+
+    </div>
+    <button id="undoBtn" class="undo-btn" style="display:none;">Undo Cookie: <br>CONFRIM FINAL CHOICE</button>
+    <!-- end of cookie -->
+
+
+    <!-- start of chatbot -->
+    <button id="chatbot-toggler">
+        <span class="material-symbols-rounded"> mode_comment</span>
+        <span class="material-symbols-rounded"> close</span>
+    </button>
+
+
+    <div class="chatbot-popup">
+        <!-- CHATBOT HEADER -->
+        <div class="chatbot-header">
+            <div class="header-info">
+                <img src="../images/chatbot-image/chatbot.png" style="width: 30px; height: 30px;" class="chatbot-logo">
+                <h2 class="logo-text">chatbot</h2>
+            </div>
+            <button class="material-symbols-rounded" id="close-chatbot" >keyboard_arrow_down</button>
+        </div>
+
+
+        <!-- CHATBOT BODY -->
+        <div class="chat-body">
+            <div class="message bot-message">
+                <img src="../images/chatbot-image/black-chatbot.png" style="width:30px;height:30px;object-fit:contain;">
+                <div class="message-text">Hey there  👋<br> How can i help you
+                today?</div>
+            </div>
+             
+        </div>
+
+        <!-- CHATBOT FOOTER -->
+        <div class="chatbot-footer">
+            <form action="#" class="chat-form">
+                <textarea  placeholder="Message...." class="message-input" required></textarea>
+                <div class="chat-controls">
+                    <button type="button" id="emoji-picker" class="material-symbols-rounded">sentiment_satisfied</button>
+                    <div class="file-upload-wrapper">
+                        <input type="file" accept="images/*" id="file-input" hidden>
+                        <img src="#">
+                        <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+                        <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+                    </div>
+                    
+                    <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end of chatbot -->
+
+
+
+
+
+    
+    <!-- footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>KLOLANS<span>BLOG</span></h2>
+                <p>
+                     Welcome to KLOLANSBLOG, we deliver the latest news, insights, and stories that matter. From politics and business to lifestyle and entertainment, we keep you informed, inspired, and connected every day.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i>&nbsp; 123-345-789</span>
+                    <span><i class="fas fa-envelope"></i>&nbsp; info@klolan.com</span>
+                </div>
+                <div class="socials">
+                    <a href="https://instagram.com/klolansblog" target="_blank">
+                    <i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@YOUR_USERNAME" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <br>
+                <ul>
+                    <a href="PDF/privacy policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="PDF/Terms and Conditions.pdf" target="_blank">Terms and Conditions</a>
+                    <a href="PDF/cookie policy.pdf" target="_blank">Cookie Policy</a>
+                    <a href="">Events</a>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-form">
+                <h2>Contact Us</h2>
+                <br>
+                <form action="#">
+                    <input type="" name="" class="text-input contact-input" placeholder="Email Address....">
+                    <textarea name=""  rows="4" class="text-input contact-input"  placeholder="Message"></textarea>
+                    <button class="btns btns-big contact-btns"><i class="fas fa-envelope"></i> Send</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; www.klolansblog.com | Designed By JOA
+        </div>
+    </footer>
+
+
+    <script src="../Js/main.js"></script>
+
+    <!-- emoji mart script for emoji picker -->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+
+</body>
+</html>

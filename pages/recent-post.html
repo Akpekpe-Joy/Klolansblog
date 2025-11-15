@@ -1,0 +1,521 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KlolansBlog</title>
+
+    <!-- google fontawesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="../css/main.css">
+
+
+    <style>
+        .content{
+        width: 80%;
+        margin: 30px auto;
+        display: flex;
+        gap: 20px;
+        }
+        .content .main-content{
+        flex: 2;
+        background: #fff;
+        border-radius: 4px;
+        height: auto;
+        padding: 70px;
+        box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .main-content .post-content .recent-post-title{
+        font-family: 'candal';
+        font-family: 200;
+        color: #222;
+        
+        }
+        .main-content .post-content .author{
+        font-size: 13px;
+        margin: 5px 0 15px 0;
+        color: #555;
+        font-weight: 600;
+        }
+        .main-content .post-content  img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin: 15px 0;
+        }
+        .main-content .post-content h4{
+        padding: 30px 0 10px 0;
+        font-family: 'candal';
+        color: #222;
+        }
+        .main-content .post-content p{
+        color: #555;
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 1.5;
+        letter-spacing: 0.5px;
+        }
+        .content .side-bar{
+        flex: 1;
+        border-radius: 4px;
+        }
+        .content .side-bar .section{
+        background: #fff;
+        padding: 20px;
+        border: 4px;
+        margin-bottom: 20px;
+        box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .content .side-bar .section.topics{
+        margin-top: 20px;
+        background: #fff;
+        box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .content .popular .post{
+        border-top: 1px solid #e0e0e0;
+        margin-top: 10px;
+        padding-top: 10px;
+        }
+        .content .popular .post img
+        {
+        height: 50px;
+        width: 50px;
+        float: left;
+        margin-right: 10px;
+        box-shadow:  0 0 4px rgba(0, 0, 0, 0.08);
+        }
+        .content .popular .post a{
+        color: #555;
+        font-weight: 700;
+        letter-spacing: .5px;
+            transition: all .3s ease;
+        }
+
+
+        .content .side-bar .section .section-title{
+        margin: 10px 0 15px 0;
+        font-family: 'Candal', serif;
+        color: #222;
+        }
+        .content .side-bar .section.topics ul{
+        border-top: 1px solid #e0e0e0;
+        }
+        .content .side-bar .section.topics ul li a{
+        display: block;
+        color: #555;
+        padding: 15px 0 15px 8px;
+        border-bottom: 1px solid #e0e0e0;
+        letter-spacing: .5px;
+        font-size: 13px;
+        font-weight: 700;
+        transition: all .3s ease;
+        }
+        .content .side-bar .section.topics ul li a:hover,
+        .content .popular .post a:hover{
+        padding-left: 10px;
+        color: #222;
+        
+        }
+
+
+
+
+        /* responsive Media Queries */
+        @media(min-width:1200px)
+        {
+            .content{width: 85%;}
+            .content .main-content{width: 72%;}
+            .content .side-bar{width: 28%;}
+        }
+        @media(max-width:1199px){
+        .content{width: 90%;}
+        .content .main-content{width: 65%;}
+        .content .side-bar{width: 35%;}
+
+        }
+        @media(max-width:991px){
+        .content{flex-direction: column;}
+        .content .main-content,
+        .content .side-bar{
+            width: 100%;
+        }
+        .content .main-content{
+            padding: 70px 30px;
+        }
+        }
+
+    </style>
+    
+</head>
+<body>
+    
+    <header>
+        <input type="radio" name="slide" id="menu_btn" class="input_radio">
+        <input type="radio" name="slide" id="cancel_btn" class="input_radio">
+        <label for="menu_btn" class="menu_btn"><i class="fa fa-bars"></i></label>
+        <a href="#" class="logo">
+            KLOLANS<span>BLOG</span>
+        </a>
+        <div class="navigation">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <label for="cancel_btn" class="cancel_btn"><i class="fa fa-times"></i></label>
+        </div>
+        <a href="javascript:void(0)" class="subscribe-btn" id="openModal">Subscribe</a>
+    </header>
+    <!-- End of Header -->
+
+
+
+    <!-- subscribe button -->
+    <div class="modal-container">
+        <div class="contact-box">
+            <button class="close-btn">&times;</button>
+            <div class="modal-left">
+                <img src="../images/subscribe.jpg" alt="">
+            </div>
+            <div class="modal-right">
+                <form action="" id="subscribeForm">
+
+                    <h2>Subcribe to our news letter</h2>
+                    <p>
+                        Love what you’re reading?
+                        Subscribe and we’ll send you our latest blog posts 
+                        and insights.
+                    </p>
+                    <input type="email" name="" class="field" placeholder="Your Email" required>
+                                
+                        <button  class="button">Subscribe</button>
+                </form>
+             </div>  
+        </div> 
+    </div> 
+    <!-- end of subscribe button -->
+
+    <div class="page_wrapper">
+
+
+           
+        <div class="content">
+            <div class="main-content">
+                <div class="post-content">
+
+                    <div class="story" id="The-Royal-Trio">
+                        <h2 class="recent-post-title">The Kingdom of Kubala—A Royal 
+                        Fantasy in the Scottish Woods
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+
+                        <img src="../images/recent-post/africa.jpg" alt="">
+
+                        <h4>The Royal Trio</h4>
+                        <p>Leading the group is King Atehene (formerly opera singer Kofi Offeh) and his royal consort Queen Nandi (Jean Gasho), accompanied by a young American woman, Kaura Taylor, now known as Asnat, the “handmaiden.” Their narrative welds biblical prophecy, Afro-Scottish heritage, and mysticism into a unique tapestry of belief and ritual.</p>
+                        <div class="line"></div>
+
+                        <h4>Legend Reimagined</h4>
+                        <p>According to Kubala’s lore, their ancestors—depicted as black Jacobites—were deported by Queen Elizabeth I four centuries ago. They claim Scotland as their rightful ancestral homeland, asserting descent from the Messiah, and view this return as a pilgrimage to fulfill prophecy.</p>
+                        <p><p>Surviving off the land, the group bathes in clear streams, practices communal rituals, wears leaves and handmade attire, and rejects local governmental authority in favor of the laws of their god, Yahowah.</p></p>
+                        <p>Their camp, on council-owned land, faced eviction. The group responded by resisting local authority, insisting only divine rulership mattered. Tensions escalated when vigilantes allegedly burned their tents, raising social and safety concerns among locals.<br>
+                           Some residents initially showed curiosity, others offered help—until rising unease prompted authorities to act.
+                        </p>
+                        <div class="line"></div>
+                         
+                        <h4>A Daughter Dissolves into Myth</h4>
+                        <p>Kaura Taylor, a 21-year-old single mother from Texas, reported missing by her family. She reemerged within this woodland tribe, now calling herself Asnat, claiming she escaped abuse and found solace in Kubala’s natural, spiritual life. But her family worries she may have been manipulated, especially after her child was taken into UK care.</p>
+                        <div class="line"></div>
+
+                        <p>Scottish authorities, including the Borders Council and Police Scotland, have offered housing and support but face a complex challenge: while Asnat is an adult, her welfare remains a concern. The camp has since been removed, but the group's story continues to spark local and online debate about belief, autonomy, and intervention.</p>
+
+
+                    </div>
+
+                    <div class="story" id="south-africa">
+                        <h2 class="recent-post-title">From Cape Town to Washington: The Fight for South Africa’s First Breakaway Province
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+                        
+                        <h4>Who’s Behind the Push?</h4>
+                        <p>The idea is championed by groups like the <span>Cape Independence Party (CAPEXIT)</span> and the <span>Cape Independence Advocacy Group (CIAG)</span>. They’ve even spun off a new <span>Referendum Party,</span> whose sole mission is to pressure leaders into calling a vote on the issue.
+                        <p>Yet despite the noise, the road is blocked. South Africa’s Constitution allows only the President or the <span>Provincial Premier</span> to call a referendum—and neither the ANC (national ruling party) nor the DA (which runs the Western Cape) have shown interest.</p>
+                        <p>Both parties dismiss Cape Independence as <span>“a myth”</span> and <span>“self-serving.”</span> Critics go further, calling it racially divisive and a distraction from real reform.</p>
+                        <div class="line"></div>
+
+                        <h4>Taking the Fight Abroad</h4>
+                        <p>In March 2025, the Cape Independence Advocacy Group even tried to <span>lobby Washington, D.C.</span>, hoping to win international sympathy. President Cyril Ramaphosa blasted the effort, warning that South Africa would never allow its territory to fragment along racial or political lines.</p>
+                        <div class="line"></div>
+
+                        <h4>Can It Really Happen?</h4>
+                        <p>Legally, Cape Independence faces monumental hurdles. Even if a referendum passed, secession would likely require <span>constitutional amendments, national consent, and international recognition</span>—none of which seem forthcoming.</p>
+                        <p>But the fact that the idea is gaining traction speaks volumes about the frustration many citizens feel with South Africa’s current leadership. For some, CapeXit represents not just independence, but <span>hope for better governance, safer streets, and economic revival.</span></p>
+                        <div class="line"></div>
+
+                        <h4>The Dream vs. Reality</h4>
+                        <p>For now, Cape Town remains firmly part of South Africa. But the CapeXit dream is alive—and growing louder. Whether it’s a serious political project or just a protest against the status quo, it forces the nation to reckon with a deeper truth: <span>unity only works when people feel it benefits them.</span></p>
+                        
+
+                    </div>
+
+                    <div class="story" id="Ghana">
+                        <h2 class="recent-post-title">From Ghana to the FBI: The Fall of ‘The Enterprise
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+
+                        <h4>Love, Lies, and Millions</h4>
+                        <p>The scheme was simple but devastating:<br>
+                           &#9679; A lonely widow in Texas receives a message from a charming “soldier stationed overseas.”<br>
+                           &#9679; A business executive in Chicago is tricked into wiring funds to a “partner” he never met.
+                        </p>
+                        <p>Behind these facades were not soldiers or partners—but men with laptops in Ghana, spinning lies that drained bank accounts and broke hearts.</p>
+                        <p>
+                            Prosecutors say the accused—<strong>Isaac Oduro Boateng (Kofi Boat),Inusah Ahmed (Pascal),Derrick van Yeboah (Van)</strong>, and the <strong>elusive Patrick Kwame Asare (Borgar)</strong>—were high-ranking operators of a cybercrime syndicate called “The Enterprise.”
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>The Fall</h4>
+                        <p>On <strong>August 7, 2025</strong>, after months of surveillance and negotiations, Ghanaian authorities working with the FBI made their move.</p>
+                        <p>&#9679; Boateng, Ahmed, and Yeboah were arrested, hustled through immigration, and flown to the U.S. under heavy guard.<br>
+                           &#9679; Asare slipped through the cracks. His name now sits on America’s most-wanted cyber list.
+                        </p>
+                        <p>The men were marched into a federal courtroom in New York—no longer digital ghosts, but defendants facing <strong>wire fraud, money laundering, and conspiracy charges</strong> that could keep them behind bars for decades.</p>
+                        <p>In Ghana, the arrests lit up headlines. Some saw justice; others saw the country’s name dragged once again into the mud of internet fraud culture, known locally as sakawa.
+                            Yet the cooperation between Ghana’s <strong>EOCO, INTERPOL, and Cyber Security Authority</strong> and the FBI showed another side: a nation fighting to clean up its image, even if it means extraditing its own citizens.</p>
+
+                    </div>
+
+                    <div class="story" id="horror">
+                        <h2 class="recent-post-title">The Carpenter’s Son: Nicolas Cage Reimagines the Dark Childhood of Jesus in a Controversial New Film
+                        </h2>
+                        <p class="author">By Paul | 4th November 2025</p>
+
+                        <h4>A Holy Family in Hiding</h4>
+                        <p>The film follows Joseph, Mary, and their young son—known only as The Boy—as they flee to Roman-occupied Egypt. Life in exile seems fragile enough, but when The Boy befriends another strange child, things take a darker turn. Supernatural powers, whispered prophecies, and violent doubts creep in, unsettling both family and community.</p>
+                        <div class="line"></div>
+
+                        <h4>A Star-Studded Cast</h4>
+                        <p>&#9679;<strong>Nicolas Cage</strong> as Joseph, the weary carpenter carrying divine secrets.<br>
+                           &#9679;<strong>FKA Twigs</strong> as Mary, the mother torn between awe and fear of her son.<br>
+                           &#9679;<strong>Noah Jupe</strong> as The Boy, a version of Jesus whose miracles may not always be merciful.
+                        </p>
+                        <div class="line"></div>
+
+                        <h4>Roots in Forbidden Texts</h4>
+                        <p>The film takes inspiration from the Infancy Gospel of Thomas—an apocryphal text long excluded from the Bible. Unlike the gentle shepherd of Sunday school, this story portrays the young Jesus as a child both divine and dangerous, capable of miracles that blur the line between blessing and curse.</p>
+                        <div class="line"></div>
+
+                        <h4>Why It’s Generating Buzz</h4>
+                        <p>Part faith, part folklore, part nightmare—The Carpenter’s Son sits in the same unsettling space as The Witch and The Passion of the Christ. Its teaser, released in August 2025, already has horror fans and theologians debating in equal measure.</p>
+                        <div class="line"></div>
+
+                        <h4>Release Date</h4>
+                        <p>The film is slated for release in <strong>Fall 2025</strong>, and early reactions suggest it could become one of the most controversial religious horror films of the decade.</p>
+                    </div>
+                    
+
+                   
+                </div>
+                               
+                
+            </div>
+
+            <div class="side-bar">
+
+             <div class="section popular">
+                    <h2 class="section-title">POPULAR POSTS</h2>
+
+                   <div class="post clearfix">
+                        <img src="../images/popular-post/conflicts.avif">
+                        <h6><a href="popular-post.html?id=gunsblazing" class="titles">CONFLICTS & GEOPOLITICAL TENSIONS</a></h6>
+                    </div>
+                     <div class="post clearfix">
+                        <img src="../images/popular-post/Environmental-Issues.jpg">
+                       <h6> <a href="popular-post.html?id=Climate-and-Environment" class="titles">CLIMATE & ENVIRONMENT</a></h6>
+                    </div>
+                     <div class="post clearfix">
+                        <img src="../images/popular-post/tech-ai.jpeg">
+                        <h6><a href="popular-post.html?id=technology-and-ai" class="titles">TECHNOLOGY & AI</a></h6>
+                    </div>
+                     <div class="post clearfix">
+                        <img src="../images/popular-post/public-health.jpg" alt="">
+                        <h6><a href="popular-post.html?id=public-health" class="titles">PUBLIC HEALTH</a></h6>
+                    </div>
+                    <div class="post clearfix">
+                        <img src="../images/popular-post/space.jpg" alt="">
+                       <h6> <a href="popular-post.html?id=space" class="titles">SPACE</a></h6>
+                    </div>
+
+                </div>
+
+                <div class="section topics">
+                    <h2 class="section-title">TOPICS</h2>
+                    <ul>
+                        <li><a href="topic.html?id=prayer">Prayers</a></li>
+                        <li><a href="topic.html?id=poems">Poems</a></li>
+                        <li><a href="topic.html?id=fictions">Fictions</a></li>
+                        <li><a href="topic.html?id=motivation">Motivation</a></li>
+                        <li><a href="topic.html?id=life_lessons">Life lessons</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+    </div>
+
+
+
+    
+   
+
+
+
+
+
+    <!-- coookie popup -->
+    <div class="cookie-overlay" id="cookieOverlay"></div>
+    <div class="cookie-container" id="cookiePopup">
+        <div class="cookie-box">
+            <i class="fas fa-cookie-bite"></i>
+            <h2>Cookie Consent</h2>
+        </div>
+
+        <div class="cookie-text">
+            <p>
+                We use cookies to enhance site performance, analyze traffic, and provide you with a better experience. 
+                By clicking <strong>Got it</strong> you concent to our use of cookies. To find out more read our <a href="" target="_blank">Privacy Policy</a> and <a href="" target="_blank">Cookie Policy</a>
+
+            </p>
+        </div>
+        <div class="cta">
+            <button class="ctas" id="acceptBtn">Got it</button>
+            <button class="ctas" id="declineBtn">Decline</button>
+        </div>
+
+
+
+    </div>
+    <button id="undoBtn" class="undo-btn" style="display:none;">Undo Cookie: <br>CONFRIM FINAL CHOICE</button>
+    <!-- end of cookie -->
+
+
+
+    
+
+
+    <!-- chatbot -->
+    <button id="chatbot-toggler">
+        <span class="material-symbols-rounded"> mode_comment</span>
+        <span class="material-symbols-rounded"> close</span>
+    </button>
+
+
+    <div class="chatbot-popup">
+        <!-- CHATBOT HEADER -->
+        <div class="chatbot-header">
+            <div class="header-info">
+                <img src="../images/chatbot-image/chatbot.png" style="width: 30px; height: 30px;" class="chatbot-logo">
+                <h2 class="logo-text">chatbot</h2>
+            </div>
+            <button class="material-symbols-rounded" id="close-chatbot" >keyboard_arrow_down</button>
+        </div>
+
+
+        <!-- CHATBOT BODY -->
+        <div class="chat-body">
+            <div class="message bot-message">
+                <img src="../images/chatbot-image/black-chatbot.png" style="width:30px;height:30px;object-fit:contain;">
+                <div class="message-text">Hey there  👋<br> How can i help you
+                today?</div>
+            </div>
+             
+        </div>
+
+        <!-- CHATBOT FOOTER -->
+        <div class="chatbot-footer">
+            <form action="#" class="chat-form">
+                <textarea  placeholder="Message...." class="message-input" required></textarea>
+                <div class="chat-controls">
+                    <button type="button" id="emoji-picker" class="material-symbols-rounded">sentiment_satisfied</button>
+                    <div class="file-upload-wrapper">
+                        <input type="file" accept="images/*" id="file-input" hidden>
+                        <img src="#">
+                        <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+                        <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+                    </div>
+                    
+                    <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- end of chatbot -->
+
+
+
+
+    
+    <!-- footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>KLOLANS<span>BLOG</span></h2>
+                <p>
+                     Welcome to KLOLANSBLOG, we deliver the latest news, insights, and stories that matter. From politics and business to lifestyle and entertainment, we keep you informed, inspired, and connected every day.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i>&nbsp; 123-345-789</span>
+                    <span><i class="fas fa-envelope"></i>&nbsp; info@klolan.com</span>
+                </div>
+                <div class="socials">
+                    <a href="https://instagram.com/klolansblog" target="_blank">
+                    <i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@YOUR_USERNAME" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <br>
+                <ul>
+                    <a href="PDF/privacy policy.pdf" target="_blank">Privacy Policy</a>
+                    <a href="PDF/Terms and Conditions.pdf" target="_blank">Terms and Conditions</a>
+                    <a href="PDF/cookie policy.pdf" target="_blank">Cookie Policy</a>
+                    <a href="">Events</a>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-form">
+                <h2>Contact Us</h2>
+                <br>
+                <form action="#">
+                    <input type="" name="" class="text-input contact-input" placeholder="Email Address....">
+                    <textarea name=""  rows="4" class="text-input contact-input"  placeholder="Message"></textarea>
+                    <button class="btns btns-big contact-btns"><i class="fas fa-envelope"></i> Send</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; www.klolansblog.com | Designed By JOA
+        </div>
+    </footer>
+
+
+    <script src="../Js/main.js"></script>
+
+    <!-- emoji mart script for emoji picker -->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+
+
+</body>
+</html>
